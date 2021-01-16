@@ -1,7 +1,7 @@
 # e-commerce_pcWorld
 
 ### Technologies:
-#### Front-end : HTML-CSS-Bootstrap-Sass 
+#### Front-end : HTML- CSS- Bootstrap- Sass- JavaScript- jQuery 
 #### Back-end : PHP
 #### Database : MySQL
 #### Owl Carousel plugin
