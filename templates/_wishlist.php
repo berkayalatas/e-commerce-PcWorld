@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['delete-cart-submit'])) {
-        $deletedItem = $Cart->deleteCart($_POST['item_id']);
+    if (isset($_POST['delete-wishlist-submit'])) {
+       $Cart->deleteCart($_POST['item_id'],'wishlist');
     }
 
 
@@ -48,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                                 <!--  !product rating-->
 
-                                <!-- product qty -->
+                                 
                                 <div class="qty d-flex pt-2">
                                     <form method="POST">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id" />
-                                        <button type="submit" name="delete-cart-submit" class="btn font-baloo btn-danger border-right">
+                                        <button type="submit" name="delete-wishlist-submit" class="btn font-baloo btn-danger border-right">
                                             Delete
                                         </button>
                                     </form>

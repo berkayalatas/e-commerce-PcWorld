@@ -73,7 +73,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav m-auto font-rubik">
             <li class="nav-item active">
-              <a class="nav-link" href="#header">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
  
             <li class="nav-item">
