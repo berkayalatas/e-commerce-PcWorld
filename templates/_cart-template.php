@@ -6,12 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   //add to wishlist
   if (isset($_POST['wishlist_submit'])) {
-     $Cart->addToWishlist($_POST['item_id']);
+    $Cart->addToWishlist($_POST['item_id']);
   }
-
 }
 ?>
- 
+
 <section id="cart" class="py-3">
   <div class="container-fluid w-75">
     <h5 class="font-baloo biggerFont">Shopping Cart</h5>
@@ -51,7 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fas fa-angle-up"></i>
                     </button>
-                    <input type="text" class="qty_input border px-2 w-50 bg-light" disabled data-id="<?php echo $item['item_id'] ?? '0'; ?>" value="1" placeholder="1" />
+                    <input type="text" class="qty_input border px-2 w-50 bg-light" disabled data-id="<?php echo $item['item_id'] ?? '0'; ?>"
+                     value="1" placeholder="1" />
                     <button class="qty-down border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fas fa-angle-down"></i>
                     </button>
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <form method="POST">
                     <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
                     <button type="submit" name="delete-cart-submit" class="btn font-baloo btn-danger ml-sm-4 px-3 border-right">
-                      Delete
+                    <i class="fas fa-trash"></i>  Delete
                     </button>
                   </form>
 
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <form method="POST">
                     <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
                     <button type="submit" name="wishlist_submit" class="btn font-baloo ml-sm-1 btn-warning">
-                      Add to Wishlist
+                    <i class="fas fa-plus"></i> Add to Wishlist
                     </button>
                   </form>
 
@@ -78,7 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
               <div class="col-lg-2 text-md-right">
                 <div class="font-size-20 text-danger font-baloo">
-                  $<span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
+                <i class="fas fa-dollar-sign"></i>
+                <span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                     <?php echo $item['item_price'] ?? "Unknown price"; ?>
                   </span>
                 </div>
@@ -103,14 +104,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               Subtotal (
               <strong><?php echo isset($subTotal) ? count($subTotal) : 0; ?> </strong>
               item):&nbsp;
-              <span class="text-danger">$
+              <span class="text-danger"> <i class="fas fa-dollar-sign"></i>
                 <span class="text-danger" id="deal-price">
                   <?php echo isset($subTotal) ? $Cart->getSubtotal($subTotal) : 0; ?>
                 </span>
               </span>
             </h5>
             <button type="submit" class="btn btn-success mt-3">
-              Proceed to Buy
+            <i class="fas fa-shopping-bag"></i> Proceed to Buy
             </button>
           </div>
         </div>

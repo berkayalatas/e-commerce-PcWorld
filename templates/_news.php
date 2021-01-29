@@ -17,7 +17,7 @@
             non iste sequi cupiditate tempora iure. Velit accusamus saepe harum
             sed.
           </p>
-          <a href="#" class="color-second text-left">Read</a>
+          <a href="#" class="text-light btn btn-primary">Read</a>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
             non iste sequi cupiditate tempora iure. Velit accusamus saepe harum
             sed.
           </p>
-          <a href="#" class="color-second text-left">Read</a>
+          <a href="#" class="text-light btn btn-primary">Read</a>
         </div>
       </div>
 
@@ -51,7 +51,7 @@
             non iste sequi cupiditate tempora iure. Velit accusamus saepe harum
             sed.
           </p>
-          <a href="#" class="color-second text-left">Read</a>
+          <a href="#" class="text-light btn btn-primary">Read</a>
         </div>
       </div>
 
@@ -68,7 +68,8 @@
             non iste sequi cupiditate tempora iure. Velit accusamus saepe harum
             sed.
           </p>
-          <a href="#" class="color-second text-left">Read</a>
+          <a href="#" class="text-light btn btn-primary">
+            Read</a>
         </div>
       </div>
     </div>

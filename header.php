@@ -1,113 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PC World</title>
 
-    <!-- Bootstrap CDN -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC World</title>
+  <link rel="icon" href="https://img.icons8.com/cotton/30/000000/computer.png" />
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    <!-- Owl-carousel CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw="
-      crossorigin="anonymous"
-    />
+  <!-- Owl-carousel CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
 
-    <!-- font awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
-      crossorigin="anonymous"
-    />
-    <!-- Custom CSS file -->
-    <link rel="stylesheet" href="style.css" />
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <!-- Custom CSS file -->
+  <link rel="stylesheet" href="style.css" />
 
-    <?php 
-      //require functions
-      require('./functions.php');
-    ?>
+  <?php
+  //require functions
+  require('./functions.php');
+  ?>
 
-  </head>
-  <body>
-    <!-- start #header -->
-    <header id="header">
-      <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
-        <p class="font-rale font-size-12 text-black-50 m-0">
-          <strong> Visit Us: </strong> 750 17th St NW, Washington, DC 20006,
-          (571) 930-5255
-        </p>
-        <div class="font-rale font-size-14">
-          <a href="#" class="px-3 border-right border-left text-dark">Login</a>
-          <a href="#" class="px-3 border-right text-dark">Whishlist (0)</a>
-        </div>
+</head>
+
+<body style="background: #f9f6ee;">
+  <!-- start #header -->
+  <header id="header">
+    <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
+      <p class="font-rale font-size-12 text-black-50 m-0">
+        <strong> Visit Us: <i class="fas fa-location-arrow"></i> </strong>
+        750 17th St NW, Washington, DC 20006,
+        (571) 930-5255
+      </p>
+      <div class="font-rale font-size-14">
+        <a href="#" class="px-3 border-right border-left text-dark">
+          <strong>Login <i class="fas fa-sign-in-alt"></i> </strong>
+        </a>
+        <a href="cart.php" class="px-3 border-right text-dark">
+          <strong> <i class="fas fa-clipboard-list"></i> Whishlist
+            (<?php echo count($product->getData('wishlist')) ?> )
+          </strong>
+        </a>
       </div>
-      <!-- Primary Navigation -->
-      <nav id="navbarBlue" class="navbar navbar-expand-lg navbar-dark color-second-bg ">
-        <a class="navbar-brand" href="index.php">PC World</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav m-auto font-rubik">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home</a>
-            </li>
- 
-            <li class="nav-item">
-              <a class="nav-link" href="#popular-products"
-                >Products <i class="fas fa-chevron-down"></i
-              ></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#special-offer"
-                >Speacial Offers <i class="fas fa-chevron-down"></i
-              ></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#new-computers">New Computers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#news">News</a>
-            </li>
-          </ul>
-          <form action="#" class="font-size-14 font-rale">
-            <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
-              <span class="font-size-16 px-2 text-white"
-                ><i class="fas fa-shopping-cart"></i
-              ></span>
-              <span class="px-3 py-2 rounded-pill text-dark bg-light">
-                 <?php echo count($product->getData('cart') )?> 
-              </span>
-            </a>
-          </form>
-        </div>
-      </nav>
-      <!-- Primary Navigation -->
-    </header>
-    <!-- start #header -->
+    </div>
+    <!-- Primary Navigation -->
+    <nav id="navbarBlue" class="navbar navbar-expand-lg navbar-dark color-second-bg ">
+      <a class="navbar-brand" href="index.php">
+        <img src="https://img.icons8.com/cotton/30/000000/computer.png" />
+        PC World
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav m-auto font-rubik">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">
+              <i class="fas fa-home"></i>
+              Home</a>
+          </li>
 
-    <!-- start #main-site -->
-    <main id="main-site">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php#popular-products"><i class="fab fa-product-hunt"></i> Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php#special-offer"><i class="fas fa-user-tag"></i> Speacial Offers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php#new-computers">
+              <i class="fas fa-laptop"></i>
+              New Computers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.php#news">
+              <i class="fas fa-newspaper"></i>
+              News</a>
+          </li>
+        </ul>
+        <form action="#" class="font-size-14 font-rale">
+          <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
+            <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
+            <span class="px-3 py-2 rounded-pill text-dark bg-light">
+              <?php echo count($product->getData('cart')) ?>
+            </span>
+          </a>
+        </form>
+      </div>
+    </nav>
+    <!-- Primary Navigation -->
+  </header>
+  <!-- start #header -->
+
+  <!-- start #main-site -->
+  <main id="main-site">

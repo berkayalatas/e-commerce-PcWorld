@@ -35,7 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <span><i class="far fa-star"></i></span>
               </div>
               <div class="price py-2">
-                <span> <?php echo $item['item_price'] ?? '0'; ?></span>
+                <span>
+                  <i class="fas fa-dollar-sign"></i>
+                  <?php echo $item['item_price'] ?? '0'; ?>
+                </span>
               </div>
               <form method="POST">
                 <input type="hidden" name="item_id" value="
@@ -47,11 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <?php 
                     if(in_array($item['item_id'],$Cart->getCartId($product->getData('cart')) ?? [])){
                       echo '<button type="submit" disabled class="btn btn-success font-size-12">
-                        In the Cart
+                      <i class="fas fa-cart-arrow-down"></i> In the Cart
                       </button>';
                     }else {
                       echo '<button type="submit" name="most_popular_submit" class="btn btn-warning font-size-12">
-                      Add to Cart
+                      <i class="fas fa-plus"></i> Add to Cart
                     </button>';
                     }
                   ?>  
@@ -63,168 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
       <?php } ?>
       <!--  close foreach -->
-
-
-      <!-- <div class="item py-2">
-              <div class="product font-rale">
-                <a href="#"
-                  ><img
-                    src="./assets/products/b.jpg"
-                    alt="product1"
-                    class="img-fluid"
-                /></a>
-                <div class="text-center">
-                  <h6>Lenovo</h6>
-                  <div class="rating text-warning font-size-12">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="far fa-star"></i></span>
-                  </div>
-                  <div class="price py-2">
-                    <span>$520</span>
-                  </div>
-                  <button type="submit" class="btn btn-warning font-size-12">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="item py-2">
-              <div class="product font-rale">
-                <a href="#"
-                  ><img
-                    src="./assets/products/m.jpg"
-                    alt="product1"
-                    class="img-fluid"
-                /></a>
-                <div class="text-center">
-                  <h6>MacBook Air</h6>
-                  <div class="rating text-warning font-size-12">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="far fa-star"></i></span>
-                  </div>
-                  <div class="price py-2">
-                    <span>$999</span>
-                  </div>
-                  <button type="submit" class="btn btn-warning font-size-12">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="item py-2">
-              <div class="product font-rale">
-                <a href="#"
-                  ><img
-                    src="./assets/products/d.jpg"
-                    alt="product1"
-                    class="img-fluid"
-                /></a>
-                <div class="text-center">
-                  <h6>Macbook Pro</h6>
-                  <div class="rating text-warning font-size-12">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="far fa-star"></i></span>
-                  </div>
-                  <div class="price py-2">
-                    <span>$1.350</span>
-                  </div>
-                  <button type="submit" class="btn btn-warning font-size-12">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="item py-2">
-              <div class="product font-rale">
-                <a href="#"
-                  ><img
-                    src="./assets/products/e.jpg"
-                    alt="product1"
-                    class="img-fluid"
-                /></a>
-                <div class="text-center">
-                  <h6>Microsoft</h6>
-                  <div class="rating text-warning font-size-12">
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="far fa-star"></i></span>
-                  </div>
-                  <div class="price py-2">
-                    <span>$999</span>
-                  </div>
-                  <button type="submit" class="btn btn-warning font-size-12">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="item py-2">
-              <div class="product font-rale">
-                <div class="d-flex flex-column">
-                  <a href="#"
-                    ><img
-                      src="./assets/products/f.jpg"
-                      class="img-fluid"
-                      alt="pro1"
-                  /></a>
-                  <div class="text-center">
-                    <h6>Macbook</h6>
-                    <div class="rating text-warning font-size-12">
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="far fa-star"></i></span>
-                    </div>
-                    <div class="price py-2">
-                      <span>$1.099</span>
-                    </div>
-                    <button type="submit" class="btn btn-warning font-size-12">
-                      Add to Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item py-2">
-              <div class="product font-rale">
-                <div class="d-flex flex-column">
-                  <a href="#"
-                    ><img
-                      src="./assets/products/g.jpg"
-                      class="img-fluid"
-                      alt="pro1"
-                  /></a>
-                  <div class="text-center">
-                    <h6>DELL</h6>
-                    <div class="rating text-warning font-size-12">
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="fas fa-star"></i></span>
-                      <span><i class="far fa-star"></i></span>
-                    </div>
-                    <div class="price py-2">
-                      <span>$750</span>
-                    </div>
-                    <button type="submit" class="btn btn-warning font-size-12">
-                      Add to Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
     </div>
     <!-- owl carousel -->
   </div>

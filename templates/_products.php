@@ -1,5 +1,6 @@
 <?php
 $item_id = $_GET['item_id'] ?? 1;
+
 foreach ($product->getData() as $item) :
   if ($item['item_id'] == $item_id) :
 
@@ -9,30 +10,27 @@ foreach ($product->getData() as $item) :
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <img src="<?php echo $item['item_image'] ?? "./assets/products/f.jpg" ?>"
-             alt="product"
-             class="img-fluid" 
-             style="max-height: 550px" />
+            <img src="<?php echo $item['item_image'] ?? "./assets/products/f.jpg" ?>" alt="product" class="img-fluid" style="max-height: 550px" />
             <div class="form-row pt-4 font-size-16 font-baloo">
               <div class="col">
                 <button type="submit" class="btn btn-success form-control">
-                  Proceed to Buy
+                <i class="fas fa-shopping-bag"></i> Proceed to Buy
                 </button>
               </div>
               <div class="col">
                 <?php
                 if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
                   echo '<button type="submit" disabled class="btn btn-warning font-size-16 form-control">
-                        In Cart
+                    <i class="fas fa-cart-arrow-down"></i>  In Cart  
                       </button>';
                 } else {
                   echo '<button type="submit"
-                       name="most_popular_submit"  class="btn form-control btn-warning font-size-16">
-                      Add to Cart
+                       name="most_popular_submit" class="btn form-control btn-warning font-size-16">
+                       <i class="fas fa-plus"></i>  Add to Cart
                     </button>';
                 }
                 ?>
- 
+
               </div>
             </div>
           </div>
@@ -60,8 +58,15 @@ foreach ($product->getData() as $item) :
               <tr class="font-rale font-size-14">
                 <td>Deal Price:</td>
                 <td class="font-size-20 text-danger">
-                  $<span><?php echo $item['item_price'] ?? "Unknown Price"  ?></span><small class="text-dark font-size-12">&nbsp;&nbsp;Inclusive of all taxes</small>
+                  <i class="fas fa-dollar-sign"></i>
+                  <span>
+                    <?php echo $item['item_price'] ??
+                      "Unknown Price"  ?>
+                  </span>
+                  <small class="text-dark font-size-12">
+                  </small>
                 </td>
+
               </tr>
               <tr class="font-rale font-size-14">
                 <td>You Save:</td>
@@ -84,13 +89,13 @@ foreach ($product->getData() as $item) :
                   <div class="font-size-20 my-2 color-second">
                     <span class="fas fa-truck border p-3 rounded-pill"></span>
                   </div>
-                  <a href="#" class="font-rale font-size-12">Apple <br />Deliverd</a>
+                  <a href="#" class="font-rale font-size-12"> <br />Deliverd</a>
                 </div>
                 <div class="return text-center mr-5">
                   <div class="font-size-20 my-2 color-second">
                     <span class="fas fa-check-double border p-3 rounded-pill"></span>
                   </div>
-                  <a href="#" class="font-rale font-size-12">1 Year <br />Warranty</a>
+                  <a href="#" class="font-rale font-size-12">2 Year <br />Warranty</a>
                 </div>
               </div>
             </div>
@@ -99,8 +104,12 @@ foreach ($product->getData() as $item) :
             <!--  policy -->
             <!-- order-details -->
             <div id="order-details" class="font-rale d-flex flex-column text-dark">
-              <small>Delivery by : Mar 29 - Apr 1</small>
-              <small class="mt-1">Sold by <a href="#"> Apple </a> (4.5 out of 5 | 18,198
+              <small>Delivery by:
+                <?php define('SECONDS_PER_DAY', 86400);
+                echo date('Y-m-d', time() + 3 * SECONDS_PER_DAY); ?>
+              </small>
+              <small class="mt-1">Sold by <a href="#"> <small><?php echo $item['item_brand'] ?? "Unknown Brand"  ?></small>
+                </a> (4.5 out of 5 | 18,198
                 ratings)</small>
               <small class="mt-1"><i class="fas fa-map-marker-alt color-primary"></i>&nbsp;&nbsp;Deliver to Customer - 424201</small>
             </div>
@@ -130,11 +139,11 @@ foreach ($product->getData() as $item) :
                 <div class="qty d-flex">
                   <h6 class="font-baloo ml-3">Qty</h6>
                   <div class="px-4 d-flex font-rale">
-                    <button class="qty-up border bg-light" data-id="product1">
+                    <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fas fa-angle-up"></i>
                     </button>
-                    <input type="text" data-id="product1" class="qty_input border px-2 w-50 bg-light" disabled value="1" placeholder="1" />
-                    <button data-id="product1" class="qty-down border bg-light">
+                    <input type="text" class="qty_input border px-2 w-50 bg-light" disabled data-id="<?php echo $item['item_id'] ?? '0'; ?>" value="1" placeholder="1" />
+                    <button class="qty-down border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                       <i class="fas fa-angle-down"></i>
                     </button>
                   </div>

@@ -6,6 +6,8 @@ button, button:focus {
   box-shadow: none !important;
 }
 
+
+
 /* typography classes */
 .font-baloo {
   font-family: "Baloo Thambi 2", cursive;
@@ -102,6 +104,10 @@ button, button:focus {
 }
 
 @media all and (max-width: 577px) {
+  body{
+    overflow-x: hidden;
+  }
+
   .qty .forMobileleft {
     position: relative;
     right: 20px;

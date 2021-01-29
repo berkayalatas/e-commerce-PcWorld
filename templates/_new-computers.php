@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
   }
 }
+
 ?>
 
 <!-- !New Computers -->
@@ -32,7 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <span><i class="far fa-star"></i></span>
               </div>
               <div class="price py-2">
-                <span> <?php echo $item['item_price'] ?? '0'; ?></span>
+                <span>
+                  <i class="fas fa-dollar-sign"></i>
+                  <?php echo $item['item_price'] ?? '0'; ?></span>
               </div>
               <form method="POST">
                 <input type="hidden" name="item_id" value="
@@ -41,17 +44,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="hidden" name="user_id" value="
                       <?php echo 1 ?>
                     ">
-                    <?php 
-                    if(in_array($item['item_id'],$Cart->getCartId($product->getData('cart')) ?? [])){
-                      echo '<button type="submit" disabled class="btn btn-success font-size-12">
-                        In the Cart
+                <?php
+                if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
+                  echo '<button type="submit" disabled class="btn btn-success font-size-12">
+                      <i class="fas fa-cart-arrow-down"></i> In the Cart
                       </button>';
-                    }else {
-                      echo '<button type="submit" name="most_popular_submit" class="btn btn-warning font-size-12">
-                      Add to Cart
+                } else {
+                  echo '<button type="submit" name="new_computers_submit" class="btn btn-warning font-size-12">
+                      <i class="fas fa-plus"></i> Add to Cart
                     </button>';
-                    }
-                  ?> 
+                }
+                ?>
               </form>
             </div>
           </div>
