@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete-wishlist-submit'])) {
-       $Cart->deleteCart($_POST['item_id'],'wishlist');
+        $Cart->deleteCart($_POST['item_id'], 'wishlist');
     }
 
 
@@ -48,19 +48,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                                 <!--  !product rating-->
 
-                                 
+
                                 <div class="qty d-flex pt-2">
                                     <form method="POST">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id" />
                                         <button type="submit" name="delete-wishlist-submit" class="btn font-baloo btn-danger border-right">
-                                            Delete
+                                        <i class="fas fa-trash"></i> Delete
                                         </button>
                                     </form>
 
                                     <form method="POST">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id" />
                                         <button type="submit" name="cart-submit" class="btn font-baloo ml-sm-1 btn-success">
-                                            Add to Cart
+                                        <i class="fas fa-plus"></i> Add to Cart
                                         </button>
                                     </form>
 
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                             <div class="col-lg-2 text-md-right">
                                 <div class="font-size-20 text-danger font-baloo">
-                                    $<span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
+                                    <i class="fas fa-dollar-sign"></i><span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>">
                                         <?php echo $item['item_price'] ?? "Unknown price"; ?>
                                     </span>
                                 </div>

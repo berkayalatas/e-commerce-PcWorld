@@ -12,25 +12,27 @@ foreach ($product->getData() as $item) :
           <div class="col-sm-6">
             <img src="<?php echo $item['item_image'] ?? "./assets/products/f.jpg" ?>" alt="product" class="img-fluid" style="max-height: 550px" />
             <div class="form-row pt-4 font-size-16 font-baloo">
-              <div class="col">
-                <button type="submit" class="btn btn-success form-control">
-                <i class="fas fa-shopping-bag"></i> Proceed to Buy
-                </button>
-              </div>
-              <div class="col">
-                <?php
-                if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
-                  echo '<button type="submit" disabled class="btn btn-warning font-size-16 form-control">
-                    <i class="fas fa-cart-arrow-down"></i>  In Cart  
+              <div class="col-10">
+                <form method="POST">
+                  <input type="hidden" name="item_id" value="
+                      <?php echo $item['item_id'] ?? "1"; ?>
+                    ">
+                  <input type="hidden" name="user_id" value="
+                      <?php echo 1 ?>
+                    ">
+                  <?php
+                  if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])) {
+                    echo '<button type="submit" disabled class="btn btn-warning font-size-16 form-control">
+                          <i class="fas fa-cart-arrow-down"></i>  In Cart  
                       </button>';
-                } else {
-                  echo '<button type="submit"
+                  } else {
+                    echo '<button type="submit"
                        name="most_popular_submit" class="btn form-control btn-warning font-size-16">
                        <i class="fas fa-plus"></i>  Add to Cart
                     </button>';
-                }
-                ?>
-
+                  }
+                  ?>
+                </form>
               </div>
             </div>
           </div>

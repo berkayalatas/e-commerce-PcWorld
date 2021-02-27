@@ -49,7 +49,7 @@
           <a href="https://www.linkedin.com/in/berkayalatas/" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
           <a href="cart.php" class="font-rale font-size-14 text-white-50 pb-1">Order History</a>
           <a href="cart.php" class="font-rale font-size-14 text-white-50 pb-1">Wish List</a>
-          <a href="#news" class="font-rale font-size-14 text-white-50 pb-1">Newslatters</a>
+          <a href="index.php#news" class="font-rale font-size-14 text-white-50 pb-1">Newslatters</a>
         </div>
       </div>
     </div>
