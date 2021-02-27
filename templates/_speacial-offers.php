@@ -27,9 +27,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
   <div class="container bg-light mt-sm-5">
     <h4 class="font-rubik font-size-20 biggerFont">Special Offers</h4>
     <div id="filters" class="button-group text-right font-baloo font-size-20">
-      <button class="btn btn-dark active is-checked" data-filter="*">
-        All Brand
-      </button>
+
       <?php
       array_map(function ($brand) {
         printf('<button class="btn btn-dark my-1 mr-1" data-filter=".%s">%s</button>', $brand, $brand);
@@ -44,8 +42,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
           <div class="item py-2" style="width: 200px">
             <div class="product font-rale">
               <a href="<?php printf("%s?item_id=%s", 'product.php', $item['item_id']); ?>">
-                <img src=<?php echo $item["item_image"] ?? "./assets/products/k.jpg" ?> 
-                alt="product1" class="img-fluid" />
+                <img src=<?php echo $item["item_image"] ?? "./assets/products/k.jpg" ?> alt="product1" class="img-fluid" />
               </a>
               <div class="text-center">
                 <h6><?php echo $item["item_name"] ?? "item title"; ?></h6>
