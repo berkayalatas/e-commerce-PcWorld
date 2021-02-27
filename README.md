@@ -1,5 +1,6 @@
 # e-commerce_pcWorld
 
+#### E-commerce website with PHP, MySQL, Sass and Bootstrap
 
 ![1](https://user-images.githubusercontent.com/59448862/109398405-e668c280-794d-11eb-9ee9-f868a478aae0.PNG)
 ![2](https://user-images.githubusercontent.com/59448862/109398407-e7015900-794d-11eb-8590-c4d48d633066.PNG)
